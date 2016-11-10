@@ -6,7 +6,7 @@
 <ul class="collection">
   <% @inventors.each do |inventor| %>
     <li class="collection-item">
-      <% link_to inventor.name, inventor_path(inventor) %>
+      <%= link_to inventor.name, inventor_path(inventor) %>
     </li>
   <% end %>
 </ul>
