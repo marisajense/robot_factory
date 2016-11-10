@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  serial_number: MyString
+  evil: false
+  color: MyString
+  industry: MyString
+  inventor: one
+
+two:
+  name: MyString
+  serial_number: MyString
+  evil: false
+  color: MyString
+  industry: MyString
+  inventor: two
