@@ -1,2 +1,6 @@
-<h1>Inventors#edit</h1>
-<p>Find me in app/views/inventors/edit.html.erb</p>
+<h1 class="center">Editing: <%= @inventor.name %> </h1>
+<div class="container">
+  <div class="row">
+    <%= render(partial: 'form') %>
+  </div>
+</div>

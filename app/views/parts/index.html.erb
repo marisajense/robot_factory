@@ -1,2 +1,19 @@
-<h1>Parts#index</h1>
-<p>Find me in app/views/parts/index.html.erb</p>
+<h1>Parts For Robot: <%= @robot.name %> </h1>
+  <% if @parts.any? %>
+    <ul class="collapsible" data-collapsible="accordion">
+      <% @parts.each do |part| %>
+        <li>
+          <div class="collapsible-header"><%= part.name %></div>
+          <div class="collapsible-body">
+          <p>Part: <%= part.number %> </p>
+          <%= link_to 'Edit', edit_robot_part_path(@robot, part), class: 'btn black'%>
+          <%= link_to 'Delete', robot_part_path(@robot, part), method: :delete,
+          data: {confirm: 'Really Delete?'}, class: 'btn red'%>
+        </div>
+        </li>
+      <% end %>
+      <% else %>
+        <h5>No Parts, Please Create One!</h5>
+      <% end %>
+
+<%= link_to 'New Part', new_robot_part_path(@robot), class: 'btn orange' %>

@@ -31,11 +31,12 @@ class InventorsController < ApplicationController
   end
 
   def show
+    @robots = @inventor.robots
   end
 
   def destroy
     @inventor.destroy
-    redirect_to :index
+    redirect_to inventors_path
   end
 
   private
