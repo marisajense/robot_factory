@@ -22,4 +22,26 @@ class Robot < ApplicationRecord
     in: %w(education war service novelty),
     message: "Nope!"
   }, allow_nil: true
+
+
+  def info
+    if industry == 'education'
+      "Education: #{name} has purpose: #{industry} and serial: #{serial_number}"
+    elsif industry == 'war'
+      "War: #{name} has purpose: #{industry} and serial: #{serial_number}"
+    elsif industry == 'service'
+      "Service: #{name} has purpose: #{industry} and serial: #{serial_number}"
+    elsif industry == 'novelty'
+      "Novelty: #{name} has purpose: #{industry} and serial: #{serial_number}"
+    end
+  end
+
+private
+  def generate_serial_number
+    self.serial_number = '123'
+  end
+
+  def self.by_robot
+    order(:name)
+  end
 end

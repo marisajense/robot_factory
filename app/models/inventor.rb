@@ -18,4 +18,25 @@ class Inventor < ApplicationRecord
     in: %w(software hardware education mad),
     message: "Not a valid specialty"
   }, allow_nil: true
+
+  def info
+      if speciality == 'software'
+        "Software: #{name} was hired on: #{hire_date}"
+      elsif speciality == 'hardware'
+        "Hardware: #{name} was hired on: #{hire_date}"
+      elsif speciality == 'education'
+        "Education: #{name} was hired on: #{hire_date}"
+      elsif speciality == 'mad'
+        "Mad: #{name} was hired on: #{hire_date}"
+      end
+    end
+
+  def self.by_name
+    order(:name)
+  end
+
+  private
+  def hire
+    self.hire_date = Date.today
+  end
 end

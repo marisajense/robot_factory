@@ -14,4 +14,13 @@ class Part < ApplicationRecord
   belongs_to :robot
   validates :name, :number, presence: true
   validates :name, :number, uniqueness: true
+
+  private
+  def num
+    self.number = 777
+  end
+
+  def self.by_part
+    order(:name)
+  end
 end
